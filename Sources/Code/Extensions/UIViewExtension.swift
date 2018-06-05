@@ -19,9 +19,9 @@ extension UIView {
     ///   - completion: Any work to be done after animations has completed.
     static func animateAlongsideKeyboard(_ notification: Notification, animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
         guard let userInfo = notification.userInfo,
-                let durationNumber = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber,
-                let curveNumber = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber,
-                let curve = UIViewAnimationCurve(rawValue: curveNumber.intValue) else {
+                let durationNumber = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let curveNumber = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber,
+                let curve = UIView.AnimationCurve(rawValue: curveNumber.intValue) else {
             animations()
             return
         }
@@ -123,8 +123,8 @@ extension UIView {
     }
 }
 
-extension UIViewAnimationCurve {
-    fileprivate func toOptions() -> UIViewAnimationOptions {
-        return UIViewAnimationOptions(rawValue: UInt(rawValue << 16))
+extension UIView.AnimationCurve {
+    fileprivate func toOptions() -> UIView.AnimationOptions {
+        return UIView.AnimationOptions(rawValue: UInt(rawValue << 16))
     }
 }

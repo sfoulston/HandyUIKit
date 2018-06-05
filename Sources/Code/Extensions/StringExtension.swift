@@ -32,7 +32,7 @@ extension String {
     }
 
     private func rect(for constraintSize: CGSize, font: UIFont) -> CGRect {
-        let attributes = [NSAttributedStringKey.font: font]
+        let attributes = [NSAttributedString.Key.font: font]
         return (self as NSString).boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
     }
 
@@ -43,7 +43,7 @@ extension String {
         paragraphStyle.alignment = .justified
         paragraphStyle.lineBreakMode = .byWordWrapping
 
-        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
+        return NSAttributedString(string: self, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
 
     /// Superscripts substrings of structure ^{substring} and subscripts substrings of structure _{substring}.
