@@ -3,8 +3,8 @@
 import UIKit
 
 @IBDesignable
-public class RoundableView: UIView {
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+open class RoundableView: UIView {
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
         didSet {
             update()
         }
