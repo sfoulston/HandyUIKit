@@ -405,11 +405,11 @@
 			};
 			buildConfigurationList = A14E0AB61E1F986A00DFC788 /* Build configuration list for PBXProject "HandyUIKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = A14E0AB21E1F986A00DFC788;
 			productRefGroup = A14E0ABD1E1F986A00DFC788 /* Products */;
